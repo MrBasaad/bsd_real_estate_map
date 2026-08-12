@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_bsd_estate_property_map" model="ir.ui.view">
+        <field name="name">bsd.estate.property.map</field>
+        <field name="model">bsd.estate.property</field>
+        <field name="arch" type="xml">
+            <map lat="property_latitude" lon="property_longitude">
+                <field name="property_id" />
+            </map>
+        </field>
+    </record>
+
+    <record id="bsd_real_estate_base.main_property_list_view_rec" model="ir.actions.act_window">
+        <field name="view_mode">list,kanban,calendar,form,graph,pivot,activity,map</field>
+    </record>
+
+    <record id="action_bsd_estate_property_map_view" model="ir.actions.act_window">
+        <field name="name">Properties Map</field>
+        <field name="res_model">bsd.estate.property</field>
+        <field name="view_mode">map,list,form</field>
+        <field name="view_id" ref="view_bsd_estate_property_map" />
+    </record>
+
+    <!-- إضافة خيار القائمة تحت قائمة العقارات الرئيسية -->
+    <!-- استبدل "menu_estate_root" بالـ XML ID الخاص بالقائمة الرئيسية في bsd_estate_base -->
+    <menuitem id="menu_bsd_estate_property_map"
+        name="Properties Map"
+        action="action_bsd_estate_property_map_view" />
+    <!-- parent="bsd_real_estate_base.nav_property_menu" -->
+
+</odoo>
