@@ -21,12 +21,4 @@
         <field name="view_mode">map,list,form</field>
         <field name="view_id" ref="view_bsd_estate_property_map" />
     </record>
-
-    <!-- إضافة خيار القائمة تحت قائمة العقارات الرئيسية -->
-    <!-- استبدل "menu_estate_root" بالـ XML ID الخاص بالقائمة الرئيسية في bsd_estate_base -->
-    <menuitem id="menu_bsd_estate_property_map"
-        name="Properties Map"
-        action="action_bsd_estate_property_map_view" />
-    <!-- parent="bsd_real_estate_base.nav_property_menu" -->
-
 </odoo>
